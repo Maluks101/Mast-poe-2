@@ -24,7 +24,6 @@ const App = () => {
             let iconName: keyof typeof Ionicons.glyphMap = "home";
             if (route.name === "Home") iconName = "home";
             else if (route.name === "Add Menu") iconName = "add-circle";
-            else if (route.name === "Courses") iconName = "restaurant";
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
