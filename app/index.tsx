@@ -24,7 +24,7 @@ const index = () => {
       <Text style={styles.title}>Original Beef</Text>
       <Text style={styles.subtitle}>Menu Items</Text>
       <Text style={styles.totalText}>Total Dishes: {meals.length}</Text>
-
+{/* menu items */}
       <FlatList
         data={meals}
         keyExtractor={(item) => item.id}

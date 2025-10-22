@@ -17,7 +17,7 @@ const AddMenuScreen = () => {
   const { addMeal } = useMeals();
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
-  // Cast Picker to a React component type so TypeScript accepts it in JSX
+
   const PickerComponent = Picker as unknown as React.ComponentType<any>;
   const PickerItem: any = (Picker as any).Item;
 
@@ -37,6 +37,7 @@ const AddMenuScreen = () => {
   };
 
   return (
+    //Image Background
     <ImageBackground
           source={require("@/images/back.jpg")}
           style={{ flex: 1, justifyContent: "center" }}
@@ -47,12 +48,13 @@ const AddMenuScreen = () => {
 
       <View style={styles.pickerWrapper}>
         <Text style={styles.label}>Course Type</Text>
+        {/*course types*/}
         <View style={styles.pickerContainer}>
           <Picker
             selectedValue={category}
             onValueChange={(value) => setCategory(value)}
             style={styles.picker}
-            dropdownIconColor="#1E73BE" // 👈 icon color visible on dark bg
+            dropdownIconColor="#1E73BE" 
           >
             <Picker.Item label="Starter" value="Starter" />
             <Picker.Item label="Main" value="Main" />
