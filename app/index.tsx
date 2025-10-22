@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, StyleSheet,ImageBackground} from "react-native";
 import { useMeals } from "@/components/MealsContext" ;
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -15,6 +15,11 @@ const index = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
+    <ImageBackground
+      source={require("@/images/back.jpg")}
+      style={{ flex: 1, justifyContent: "center" }}
+      resizeMode="cover"
+    >
     <View style={styles.container}>
       <Text style={styles.title}>Original Beef</Text>
       <Text style={styles.subtitle}>Menu Items</Text>
@@ -33,6 +38,7 @@ const index = () => {
         )}
       />
     </View>
+    </ImageBackground>
   );
 };
 
@@ -40,18 +46,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20, 
-    backgroundColor: "#8c90f9ff" 
   },
   title: { 
     fontSize: 20, 
     fontWeight: "bold", 
     textAlign: "center", 
-    marginVertical: 10 
+    marginVertical: 10,
+    color: "#fff",
   },
   subtitle: { 
     fontSize: 16, 
     fontWeight: "600", 
-    marginBottom: 10 
+    marginBottom: 10,
+    color: "#fff",
   },
   card: {
     backgroundColor: "#f9f9f9",
