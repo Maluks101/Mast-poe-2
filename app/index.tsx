@@ -23,6 +23,7 @@ const index = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Original Beef</Text>
       <Text style={styles.subtitle}>Menu Items</Text>
+      <Text style={styles.totalText}>Total Dishes: {meals.length}</Text>
 
       <FlatList
         data={meals}
@@ -84,6 +85,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginTop: 20,
     paddingHorizontal: 60,
+  },
+   totalText: {
+    fontSize: 14,
+    fontWeight: "600",
+    marginBottom: 10,
+    color: "#fff",
+    textAlign: "center",
   },
 });
 
