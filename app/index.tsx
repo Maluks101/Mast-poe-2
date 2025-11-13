@@ -45,7 +45,7 @@ const Index = () => {
         <Text style={styles.subtitle}>Menu Items</Text>
         <Text style={styles.totalText}>Total Dishes: {meals.length}</Text>
 
-        {/*average prices*/}
+
         <View style={styles.avgContainer}>
           <Text style={styles.avgText}>Average Prices:</Text>
           <Text style={styles.avgLine}>Starters: R{averages.Starter.toFixed(2)}</Text>
