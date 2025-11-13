@@ -45,7 +45,7 @@ const Index = () => {
         <Text style={styles.subtitle}>Menu Items</Text>
         <Text style={styles.totalText}>Total Dishes: {meals.length}</Text>
 
-        {/* ✅ Show average prices */}
+        {/*average prices*/}
         <View style={styles.avgContainer}>
           <Text style={styles.avgText}>Average Prices:</Text>
           <Text style={styles.avgLine}>Starters: R{averages.Starter.toFixed(2)}</Text>
@@ -53,7 +53,7 @@ const Index = () => {
           <Text style={styles.avgLine}>Desserts: R{averages.Dessert.toFixed(2)}</Text>
         </View>
 
-        {/* ✅ Menu list with delete button */}
+        {/* Menu list */}
         <FlatList
           data={meals}
           keyExtractor={(item) => item.id}
