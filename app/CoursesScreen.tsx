@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { View, Text, FlatList, StyleSheet, ImageBackground } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { useMeals } from "@/components/MealsContext"
 
@@ -11,6 +11,11 @@ const CoursesScreen = () => {
     filter === "All" ? meals : meals.filter((m) => m.category === filter);
 
   return (
+    <ImageBackground
+              source={require("@/images/back.jpg")}
+              style={{ flex: 1, justifyContent: "center" }}
+              resizeMode="cover"
+            >
     <View style={styles.container}>
       <Text style={styles.title}>Courses</Text>
 
@@ -33,12 +38,18 @@ const CoursesScreen = () => {
         )}
       />
     </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: "#fff" },
-  title: { fontSize: 18, fontWeight: "bold", textAlign: "center", marginBottom: 10 },
+  container: { flex: 1, padding: 20,},
+  title: { fontSize: 18, 
+    fontWeight: "bold", 
+    textAlign: "center", 
+    marginBottom: 10, 
+    color: "#fff", 
+},
   input: {
     borderWidth: 1,
     borderColor: "#ddd",
