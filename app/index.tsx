@@ -57,6 +57,7 @@ const Index = () => {
         <FlatList
           data={meals}
           keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
             <View style={styles.card}>
               <Text style={styles.category}>
