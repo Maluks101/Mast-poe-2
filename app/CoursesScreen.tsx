@@ -43,8 +43,12 @@ const CoursesScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20,},
-  title: { fontSize: 18, 
+  container: { 
+    flex: 1, 
+    padding: 20,
+},
+  title: { 
+    fontSize: 18, 
     fontWeight: "bold", 
     textAlign: "center", 
     marginBottom: 10, 
@@ -64,8 +68,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#eee",
   },
-  category: { fontWeight: "600" },
-  price: { textAlign: "right", fontWeight: "600" },
+  category: { 
+    fontWeight: "600" 
+},
+  price: { 
+    textAlign: "right", 
+    fontWeight: "600" 
+},
 });
 
 export default CoursesScreen;
