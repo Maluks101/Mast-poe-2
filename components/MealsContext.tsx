@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-export type Meal = {
+type Meal = {
   id: string;
   category: string;
   mealName: string;
@@ -10,27 +10,32 @@ export type Meal = {
 
 type MealsContextType = {
   meals: Meal[];
-  addMeal: (meal: Omit<Meal, "id">) => void;
+  addMeal: (meal: Meal) => void;
+  deleteMeal: (id: string) => void;
 };
 
 const MealsContext = createContext<MealsContextType | undefined>(undefined);
 
-export const MealsProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const MealsProvider = ({ children }: { children: React.ReactNode }) => {
   const [meals, setMeals] = useState<Meal[]>([]);
 
-  const addMeal = (meal: Omit<Meal, "id">) => {
-    setMeals((prev) => [...prev, { id: Date.now().toString(), ...meal }]);
+  const addMeal = (meal: Meal) => {
+    setMeals((prev) => [...prev, { ...meal, id: Date.now().toString() }]);
+  };
+
+  const deleteMeal = (id: string) => {
+    setMeals((prev) => prev.filter((meal) => meal.id !== id));
   };
 
   return (
-    <MealsContext.Provider value={{ meals, addMeal }}>
+    <MealsContext.Provider value={{ meals, addMeal, deleteMeal }}>
       {children}
     </MealsContext.Provider>
   );
 };
 
-export const useMeals = (): MealsContextType => {
+export const useMeals = () => {
   const context = useContext(MealsContext);
-  if (!context) throw new Error("useMeals must be used within a MealsProvider");
+  if (!context) throw new Error("useMeals must be used within MealsProvider");
   return context;
 };

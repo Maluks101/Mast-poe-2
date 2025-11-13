@@ -27,7 +27,10 @@ const AddMenuScreen = () => {
       return;
     }
 
-    addMeal({ category, mealName, description, price: `R${price}` });
+    addMeal({
+      category, mealName, description, price: `R${price}`,
+      id: ""
+    });
     setMealName("");
     setDescription("");
     setPrice("");
