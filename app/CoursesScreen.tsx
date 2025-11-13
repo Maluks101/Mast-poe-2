@@ -57,12 +57,13 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     borderColor: "#ddd",
-    borderRadius: 10,
+    borderRadius: 15,
     marginBottom: 10,
+    backgroundColor: "#fff",
   },
   card: {
     backgroundColor: "#f9f9f9",
-    borderRadius: 10,
+    borderRadius: 15,
     padding: 10,
     marginVertical: 5,
     borderWidth: 1,
