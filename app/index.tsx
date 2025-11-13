@@ -53,7 +53,7 @@ const Index = () => {
           <Text style={styles.avgLine}>Desserts: R{averages.Dessert.toFixed(2)}</Text>
         </View>
 
-        {/* Menu list */}
+        {/* Menu */}
         <FlatList
           data={meals}
           keyExtractor={(item) => item.id}
@@ -64,8 +64,6 @@ const Index = () => {
               </Text>
               <Text style={styles.meal}>{item.mealName}</Text>
               <Text style={styles.price}>Price: {item.price}</Text>
-
-              {/* Delete Button */}
               <TouchableOpacity
                 style={styles.deleteButton}
                 onPress={() => deleteMeal(item.id)}
